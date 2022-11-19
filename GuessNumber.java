@@ -1,14 +1,17 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class GuessNumber {
 
     public static void main(String[] args) {
         Random rand = new Random();
+        String uniqueID = UUID.randomUUID().toString();
         int randomNumber = rand.nextInt(10000) + 1;
         // System.out.println("The Random Number is: " + randomNumber);
 
         int tryCount = 0;
+        System.out.println("This is your unique identifier: " + uniqueID);
         while (true) {
 
             System.out.println("Enter your guess (1-10000):");
