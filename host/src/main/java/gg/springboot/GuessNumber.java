@@ -16,11 +16,13 @@ import main.java.gg.springboot.UserResponse;
 public class GuessNumber {
 
 	Random rand = new Random();
-	String uniqueID = UUID.randomUUID().toString();
-	int randomNumber = rand.nextInt(10) + 1;
+	String uniqueID = "";
+	int randomNumber;
 
 	@RequestMapping(value = "/play", method = RequestMethod.GET)
 	public UserResponse play() {
+		uniqueID = UUID.randomUUID().toString();
+		randomNumber = rand.nextInt(10000) + 1;
 		UserResponse userResponse = new UserResponse();
 		userResponse.setMessage(uniqueID);
 		userResponse.setData(0);
